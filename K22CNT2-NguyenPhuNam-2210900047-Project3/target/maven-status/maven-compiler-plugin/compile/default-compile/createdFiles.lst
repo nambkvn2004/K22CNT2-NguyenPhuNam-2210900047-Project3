@@ -1,0 +1,4 @@
+com\spring\beans\MenuItem.class
+com\spring\dao\EmpDao.class
+com\spring\beans\Emp.class
+com\spring\controllers\EmpController.class
