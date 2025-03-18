@@ -42,5 +42,6 @@
 	<classpathentry kind="lib" path="C:/Users/Nam/Documents/Zalo Received Files/json-20240303.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nam/Documents/Zalo Received Files/mysql-connector-j-9.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nam/Documents/Zalo Received Files/spring-web-5.3.0.jar"/>
+	<classpathentry kind="src" path="/NPNam_2210900047_K22CNT3"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

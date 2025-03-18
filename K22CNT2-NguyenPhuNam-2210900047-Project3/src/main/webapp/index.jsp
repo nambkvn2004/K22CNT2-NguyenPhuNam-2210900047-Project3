@@ -1,80 +1,137 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhà Hàng Hàn Quốc</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        .navbar {
-            background-color: #ff6600;
-        }
-        .banner {
-            background: url('images/banner.jpg') no-repeat center;
-            background-size: cover;
-            height: 400px;
-        }
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhà Hàng Hàn Quốc Seoul</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<style>
+body {
+    font-family: sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: white;
+    border-bottom: 1px solid #d1d5db;
+    padding: 16px 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-links a:hover {
+    color: #E63946;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+main {
+    padding: 60px 0;
+    text-align: center;
+}
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #E63946;
+    margin-bottom: 20px;
+}
+p, ul, li {
+    font-size: 18px;
+    color: #4b5563;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 40px 20px;
+}
+.card {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.button {
+    display: inline-block;
+    background-color: #E63946;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: #B22222;
+}
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 40px;
+}
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.jsp">Nhà Hàng Hàn Quốc</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#menu">Thực Đơn</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.jsp">Đăng Nhập</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="banner d-flex align-items-center justify-content-center">
-        <h1 class="text-white text-center">Chào Mừng Đến Với Nhà Hàng Hàn Quốc</h1>
-    </div>
-
-    <div class="container my-5" id="menu">
-        <h2 class="text-center mb-4">Thực Đơn Hôm Nay</h2>
-        <div class="row">
-            <%-- Ví dụ dữ liệu động lấy từ Servlet hoặc cơ sở dữ liệu --%>
-            <div class="col-md-4 menu-item">
-                <img src="images/bibimbap.jpg" alt="Bibimbap">
-                <h4>Bibimbap</h4>
-                <p>Giá: 150,000 VND</p>
-                <button class="btn btn-primary">Đặt Món</button>
-            </div>
-            <div class="col-md-4 menu-item">
-                <img src="images/tteokbokki.jpg" alt="Tteokbokki">
-                <h4>Tteokbokki</h4>
-                <p>Giá: 100,000 VND</p>
-                <button class="btn btn-primary">Đặt Món</button>
-            </div>
-            <div class="col-md-4 menu-item">
-                <img src="images/kimchi.jpg" alt="Kimchi">
-                <h4>Kimchi</h4>
-                <p>Giá: 50,000 VND</p>
-                <button class="btn btn-primary">Đặt Món</button>
-            </div>
+<header>
+    <div class="container flex justify-center items-center">
+        <div class="nav-links flex gap-8">
+            <a href="index.jsp">Trang chủ</a>
+            <a href="menu">Quản lý hệ thống</a>	
         </div>
     </div>
-
-    <div class="container my-5" id="contact">
-        <h2 class="text-center">Liên Hệ</h2>
-        <p class="text-center">Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
-        <p class="text-center">Điện thoại: 0123 456 789</p>
+</header>
+<main>
+    <h2>Nhà Hàng Hàn Quốc Seoul</h2>
+    <p>Chào mừng bạn đến với Nhà Hàng Seoul - nơi mang đến những món ăn Hàn Quốc đích thực với hương vị truyền thống và không gian ấm cúng.</p>
+    <img src="https://example.com/banner.jpg" alt="Nhà hàng Hàn Quốc" class="banner-img">
+    <h3>Món Ăn Nổi Bật</h3>
+    <div class="grid-container">
+        <div class="card">
+            <img src="https://chuphinhmenu.com/wp-content/uploads/2020/09/chup-anh-mon-an-Han-Quoc-kobop-2.jpg" alt="Bibimbap">
+            <h4>Bibimbap</h4>
+            <p>Cơm trộn Hàn Quốc với nhiều loại rau củ, thịt bò và trứng.</p>
+        </div>
+        <div class="card">
+            <img src="https://seoulkimchi.vn/wp-content/uploads/2024/04/1200-X-1200-56.jpg" alt="Kimchi">
+            <h4>Kimchi</h4>
+            <p>Món cải thảo lên men cay nồng, đặc sản Hàn Quốc.</p>
+        </div>
+        <div class="card">
+            <img src="https://takestwoeggs.com/wp-content/uploads/2023/08/Tteokbokki-Takestwoeggs-sq.jpg" alt="Tteokbokki">
+            <h4>Tteokbokki</h4>
+            <p>Bánh gạo cay với nước sốt đậm đà.</p>
+        </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</main>
+<footer>
+    <p>&copy; 2025 Nhà Hàng Seoul - Hương vị Hàn Quốc</p>
+</footer>
 </body>
 </html>
